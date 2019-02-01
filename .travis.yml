@@ -9,6 +9,7 @@ cache:
 install:
   - npm install
 script: echo "npm test temporarily disabled"
+#test on travis
 before_deploy:
   - npm run lint
   - npm run test && codecov
