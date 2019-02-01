@@ -3,7 +3,7 @@ import AppLoading from './Component/Common/AppLoading'
 
 const lazyloadComponent = (pageName) => (
   Loadable({
-    loader: () => import(`./component/Page/${pageName}`),
+    loader: () => import(`./Component/Page/${pageName}`),
     loading: AppLoading
   })
 )
