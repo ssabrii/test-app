@@ -1,27 +1,9 @@
 language: node_js
 node_js:
-  - stable
-addons:
-  sauce_connect: true
-cache:
-  directories:
-    - node_modules
-install:
-  - npm install
-script: echo "npm test temporarily disabled"
-#test on travis
-before_deploy:
-  - npm run lint
-  - npm run test && codecov
-  - npm run build
-deploy:
-  provider: pages
-  skip-cleanup: true
-  github-token: "$GITHUB_TOKEN"
-  local-dir: build
-  on:
-    branch: master
-after_deploy:
-  - npm run functional::online
-true:
-  branch: master
+- stable
+install: true
+script: true
+before_install: echo $TEST
+env:
+  global:
+    secure: RrdJgHCx1xlgwkpyN48/mUFN2mGFZTHyR903zAINFk616AJbk2W2rjbfctOTdyhTHg2hnMl3EF5UUssebpLaum1YSB4h+mDsTLuu0QHndk8YsHyUOtvBHHSRUMYuFWxYEmUH3G5TrJ1/H1eJ8GmHw865ulpHZUtMedbt9EGKK6+OxlilCI4PzoQbc6RYrW4NW4T/hYx3CPjtP+MJ4MKTrG0VkbKV/8dOP5A++glxay2wr+YTPz9Q7vISoI7cBdKzWPQ/Qow1y/KQE9Ou/oflsW4DC1cytmCEFfps19LEOhh/rMYokLLT9vwG7AuaF1Uc9NEG9F7EUZpP//PCGtEFZ82c5xcdqO/XUE1WZkZj0xcQhSh4jAr3T16+yk3PwBpmGRnQaUVuXGl9G/dy4y7/nGzkzHEgDYimqH/4Z1jhpZ/vF/R574ReFfjoJZuUQ0/zpAVpvxihO2bdBrWRRTCM033nxQKkHPZfqkHmzXjzHa4kFAJnQ8PTEwQgVETEA0bP6VmRfDxDCzZscKclGvau/gmqhOSIKu668LKbi5syluFk2Nzf9vfyOlL3kDqIUVJqfXgTNr37kNzqAMh++stHGEDVj5glzn9UGWtaEo/eqlLt/g+ILmTUquXrJucuAvFTcRhaTFwz2W2Rd4M6tO//wqo7HCRn8F0UNxjxg/5NSHA=
